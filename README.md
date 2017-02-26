@@ -1,4 +1,4 @@
-# pcf-dotnet-environment-viewer
+# DotNetMysqlPCFStarter
 
 Push the app using manifest defaults, cd into the environment folder that holds the app code:
 ```
