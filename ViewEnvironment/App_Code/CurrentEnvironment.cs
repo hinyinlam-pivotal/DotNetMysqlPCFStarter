@@ -39,15 +39,15 @@ public class CurrentEnvironment
             DbEngine = DatabaseEngine.SqlServer;
             _connectionString = BoundServices["mssql-dev"][0]["credentials"]["connectionString"].ToString();
         }
-        else if (BoundServices.GetValue("p-mysql") != null)
+        else if (BoundServices.GetValue("p.mysql") != null)
         {
             DbEngine = DatabaseEngine.MySql;;
             MySqlConnectionStringBuilder csbuilder = new MySqlConnectionStringBuilder();
-            csbuilder.Add("server", BoundServices["p-mysql"][0]["credentials"]["hostname"].ToString());
-            csbuilder.Add("port", BoundServices["p-mysql"][0]["credentials"]["port"].ToString());
-            csbuilder.Add("uid", BoundServices["p-mysql"][0]["credentials"]["username"].ToString());
-            csbuilder.Add("pwd", BoundServices["p-mysql"][0]["credentials"]["password"].ToString());
-            csbuilder.Add("database", BoundServices["p-mysql"][0]["credentials"]["name"].ToString());
+            csbuilder.Add("server", BoundServices["p.mysql"][0]["credentials"]["hostname"].ToString());
+            csbuilder.Add("port", BoundServices["p.mysql"][0]["credentials"]["port"].ToString());
+            csbuilder.Add("uid", BoundServices["p.mysql"][0]["credentials"]["username"].ToString());
+            csbuilder.Add("pwd", BoundServices["p.mysql"][0]["credentials"]["password"].ToString());
+            csbuilder.Add("database", BoundServices["p.mysql"][0]["credentials"]["name"].ToString());
             _connectionString = csbuilder.ToString();
         }
         else
